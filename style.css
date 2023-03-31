@@ -48,6 +48,10 @@ select {
   font: inherit;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -180,6 +184,10 @@ header::after {
         width: 30px;
         height: 30px;
         margin-left: auto;
+    }
+
+    .header-navigation__menu-button[data-active-menu] {
+        margin-right: 1rem;
     }
 
     .menu-button__line {
@@ -322,17 +330,8 @@ header::after {
 }
 
 .header__button.products {
-    position: relative;
-    border: 3px solid transparent;
-    background-clip: padding-box;
-    background-color: transparent;
-}
-
-.header__button.products:hover, .header__button.order:hover {
-    border-color: transparent;
-    background-image: none;
-    background-color: var(--neutral-clr-200);
     color: var(--neutral-clr-900);
+    background-color: var(--neutral-clr-200);
 }
 
 /* products section */
@@ -509,9 +508,19 @@ header::after {
 /* gallery section */
 
 .gallery-section {
-    padding-block: 7rem;
+    background-image: url("images/background/background-galeria.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 7.5rem;
+    padding-block: 10rem;
     background-color: var(--primary-clr-700);
     box-shadow: 0rem -2rem 1rem rgba(39, 28, 26, 1);
+}
+
+@media (min-width: 50em) {
+    .gallery-section {
+        background-size: auto;
+    }
 }
 
 @media(min-width:50em){
@@ -550,34 +559,66 @@ header::after {
 }
 
 .gallery-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
     display: flex;
     flex-direction: column;
+    gap: clamp(.2rem, 1vw, 1rem);
+}
+
+.gallery-slide[data-active] {
+    z-index: 1;
+    opacity: 1;
+    position: static;
+    transition-delay: 0ms;
 }
 
 .gallery-slide > div {
     display: flex;
+    gap: clamp(.25rem, 2vw, 1.875rem);
 }
 
 .button-group-gallery {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-}
-
-.button-group-gallery.desktop {
+    gap: clamp(.25rem, 2vw, 1.25rem);
     margin-top: 3.5rem;
 }
 
 .gallery__button {
+    position: relative;
+    display: block;
     width: 113px;
-    height: 68px;
-    border-radius: 30px;
+    height: 55px;
+    border-radius: 1.625rem;
+    background-color: var(--primary-clr-700);
     border: 3px solid var(--primary-clr-600);
-    background: transparent;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .gallery__button > img {
     margin: auto;
+}
+
+.gallery-slide .lower-gallery-imgs > div:last-child {
+    transform: translateY(-1.625rem);
 }
 
 /* footer */
@@ -715,4 +756,8 @@ footer {
     .mobile {
         display: none;
     }
+}
+
+.none {
+    display: none;
 }

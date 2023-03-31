@@ -25,9 +25,9 @@
                         <span class="menu-button__line" data-menu></span>
                     </button>
                     <ul class="header-navigation-ul" data-menu>
-                        <li class="header-navigation__li | fs-600"><a href="#">Sobre</a></li>
-                        <li class="header-navigation__li | fs-600"><a href="#">Contato</a></li>
-                        <li class="header-navigation__li | fs-600"><a href="#">Galeria</a></li>
+                        <li class="header-navigation__li | fs-600"><a href="#sobre">Sobre</a></li>
+                        <li class="header-navigation__li | fs-600"><a href="#contato">Contato</a></li>
+                        <li class="header-navigation__li | fs-600"><a href="#galeria">Galeria</a></li>
                     </ul>
                 </div>
             </nav>
@@ -146,7 +146,7 @@
             </div>
         </section>
 
-        <section class="about-section">
+        <section class="about-section" id="sobre">
             <div class="container">
                 <h2 class="about-section__title | fs-700 fw-regular">Sobre</h2>
                 <h3 class="about-section__subtitle | fs-700 fw-regular">+8 anos de experiência</h3>
@@ -166,55 +166,65 @@
             </div>
         </section>
 
-        <section class="gallery-section">
+        <section class="gallery-section" id="galeria">
             <div class="gallery-wrapper | container">
                 <div class="gallery-text-content">
+
                     <h2 class="gallery__title | fs-700 fw-regular">Galeria</h2>
                     <p>Agora um pouquinho do meu trabalho para vocês.
                         Desde o planejamento de receitas até a execução, estou sempre em busca da perfeição em cada detalhe, seja no sabor, na textura ou na aparência de minhas receitas criações.</p>
                     <div class="button-group-gallery desktop">
-                        <button class="gallery__button"><img src="images/left-gallery-button.png" alt=""></button>
-                        <button class="gallery__button"><img src="images/right-gallery-button.png" alt=""></button>
+                        <button class="gallery__button" data-carousel-button="prev"><img src="images/left-gallery-button.png" alt=""></button>
+                        <button class="gallery__button" data-carousel-button="next"><img src="images/right-gallery-button.png" alt=""></button>
                     </div>
                 </div>
-                <div class="gallery">
-                    <div class="gallery-slide">
-                        <div>
-                            <img src="images/galeria de fotos/ovo-de-pascoa-recheado.png" alt="">
-                            <img src="images/galeria de fotos/bolo-branco-com-chocolate.png" alt="">
-                            <img src="images/galeria de fotos/bolo-azul-de-dinossauro.png" alt="">
+
+                <div class="gallery" data-slides>
+
+                    <div class="gallery-slide" data-active>
+
+                        <div class="upper-gallery-imgs">
+                            <div><img src="images/galeria de fotos/ovo-de-pascoa-recheado.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/bolo-branco-com-chocolate.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/bolo-azul-de-dinossauro.png" alt=""></div>
                         </div>
 
-                        <div>
-                            <img src="images/galeria de fotos/salgadinhos.png" alt="">
-                            <img src="images/galeria de fotos/bolo-azul-e-amarelo.png" alt="">
-                            <img src="images/galeria de fotos/bolo-azul-aniversario.png" alt="">
+                        <div class="lower-gallery-imgs">
+                            <div><img src="images/galeria de fotos/salgadinhos.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/bolo-azul-e-amarelo.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/bolo-azul-de-aniversario.png" alt=""></div>
                         </div>
+
                     </div>
 
                     <div class="gallery-slide">
-                        <div>
-                            <img src="images/galeria de fotos/ovos de páscoa.png" alt="">
-                            <img src="images/galeria de fotos/Brigadeiros coloridos.png" alt="">
-                            <img src="images/galeria de fotos/brigadeiros-amarelos.png" alt="">
+
+                        <div class="upper-gallery-imgs">
+                            <div><img src="images/galeria de fotos/ovos de páscoa.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/Brigadeiros coloridos.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/brigadeiros-amarelos.png" alt=""></div>
                         </div>
 
-                        <div>
-                            <img src="images/galeria de fotos/bolo-de-pote.png" alt="">
-                            <img src="images/galeria de fotos/Nice-com-ovo-de-pascoa.png" alt="">
-                            <img src="images/galeria de fotos/Bolo-branco-com-coraçao.png" alt="">
+                        <div class="lower-gallery-imgs">
+                            <div><img src="images/galeria de fotos/bolo-de-pote.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/Nice-com-ovo-de-pascoa.png" alt=""></div>
+                            <div><img src="images/galeria de fotos/Bolo-branco-com-coraçao.png" alt=""></div>
                         </div>
+
                     </div>
+
                 </div>
+
                 <div class="button-group-gallery mobile">
-                    <button class="gallery__button"><img src="images/left-gallery-button.png" alt=""></button>
-                    <button class="gallery__button"><img src="images/right-gallery-button.png" alt=""></button>
+                    <button class="gallery__button" data-carousel-button="prev"><img src="images/left-gallery-button.png" alt=""></button>
+
+                    <button class="gallery__button" data-carousel-button="next"><img src="images/right-gallery-button.png" alt=""></button>
                 </div>
             </div>
         </section>
      </main>
 
-     <footer>
+     <footer id="contato">
         <div class="footer-content-wrapper | container">
             <div class="footer-flex">
                 <div class="footer-quitutes">
