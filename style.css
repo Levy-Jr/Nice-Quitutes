@@ -330,8 +330,11 @@ header::after {
 }
 
 .header__button.products {
-    color: var(--neutral-clr-900);
     background-color: var(--neutral-clr-200);
+}
+
+.header__button.products > a {
+    color: var(--neutral-clr-900);
 }
 
 /* products section */
@@ -696,7 +699,7 @@ footer {
     margin-bottom: 1.5rem;
 }
 
-.footer__contact-number {
+.footer__contact-number > a {
     display: flex;
     align-items: center;
     gap: 2rem;
