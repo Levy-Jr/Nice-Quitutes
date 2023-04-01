@@ -305,6 +305,8 @@ header::after {
 }
 
 .header-content-buttons {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     flex-direction: column;
     gap: .5rem;
